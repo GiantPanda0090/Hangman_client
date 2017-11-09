@@ -24,8 +24,12 @@ public class Client {
                 BufferedReader sercerReceive = new BufferedReader(new InputStreamReader(serverSocket.getInputStream()));
             PrintWriter sercerSend = new PrintWriter(serverSocket.getOutputStream());
             PrintWriter send = new PrintWriter(socket.getOutputStream());
-                BufferedReader receive = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-                System.out.print("Input command:");
+
+
+            BufferedReader receive = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            System.out.println("\n==================================");
+            System.out.println("Input Option:\nstart -> Start the game\nquit -> Quit the game\n==================================\n\nUser allow to input quit into the guess box anytime during the game to Quit the game!\n\nHow to play:\nYou can either guess word by word or finish up the rest of the letter once for all\nPlayer has same amount of chance as the length of the word!\nGood luck and Have fun!");
+            System.out.print("\nInput command:");
                 String keyboardIn = keyboard.nextLine();
                 client.send(keyboardIn, socket, send);
 

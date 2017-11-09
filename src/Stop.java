@@ -3,6 +3,8 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+import static java.lang.Thread.sleep;
+
 public class Stop implements Runnable {
     private static Client client;
     private static Socket serverSocket;
@@ -30,6 +32,11 @@ public Stop(Client client, Socket serverSocket,BufferedReader sercerReceive,Thre
             System.err.println("Server has terminate the connection due to connection issue!");
             System.err.println("============================================================");
 
+        }
+        try {
+            sleep(30);//server should shut down after client
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
         game.interrupt();
         System.out.println("Session killed");

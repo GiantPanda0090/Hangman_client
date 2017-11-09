@@ -72,8 +72,7 @@ keyboard.close();
 
     private String receive() throws IOException {
         String str;
-
-            str = receive.readLine();
+         str = receive.readLine();
         return str;
     }
 
