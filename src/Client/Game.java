@@ -1,3 +1,5 @@
+package Client;
+
 import java.io.*;
 import java.net.Socket;
 import java.util.ArrayList;
@@ -48,7 +50,7 @@ public class Game implements Runnable {
                 String status = receive();
                 String score = receive();
                 if (status.compareTo("gameover") == 0) {
-                    System.out.println("Game Over");
+                    System.out.println("Client.Game Over");
                     System.out.println("Your current score is: "+score);
                 } else {
                     System.out.println("We have a winner!");
